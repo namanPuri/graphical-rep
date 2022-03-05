@@ -1,6 +1,8 @@
 
 # importing the required module
 import matplotlib.pyplot as plt
+from git import Repo
+
 figure, axis = plt.subplots(3,1,figsize=(10,10))
 # x axis values
 x = [1,2,3,4]
@@ -20,4 +22,19 @@ axis[2].set_title("Humidity Data")
 # function to show the plot
 figure.tight_layout()
 plt.savefig('chart.png')
-plt.show()
+# plt.show()
+
+PATH_OF_GIT_REPO = r'.'  # make sure .git folder is properly configured
+COMMIT_MESSAGE = 'comment from python script'
+
+def git_push():
+    try:
+        repo = Repo(PATH_OF_GIT_REPO)
+        repo.git.add(update=True)
+        repo.index.commit(COMMIT_MESSAGE)
+        origin = repo.remote(name='origin')
+        origin.push()
+    except:
+        print("error")    
+
+git_push()
