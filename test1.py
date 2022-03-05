@@ -2,6 +2,7 @@
 # importing the required module
 import matplotlib.pyplot as plt
 from git import Repo
+import random
 
 figure, axis = plt.subplots(3,1,figsize=(10,10))
 # x axis values
@@ -10,6 +11,11 @@ x = [1,2,3,4]
 y = [20,40,10,4]
 y1= [20,50,80,6]
 y2 =[50,30,60,9]
+
+y.append(random.randint(10,40))
+y1.append(random.randint(900,1000))
+y2.append(random.randint(10,90))
+x.append(x[len(x)-1]+1)
 
 axis[0].plot(x, y, color = 'r', marker='o', markerfacecolor='black', markersize=5)
 axis[0].set_title("Temperature Data")
