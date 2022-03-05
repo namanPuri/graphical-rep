@@ -25,7 +25,7 @@ plt.savefig('chart.png')
 # plt.show()
 
 PATH_OF_GIT_REPO = ''  # make sure .git folder is properly configured
-COMMIT_MESSAGE = 'comment from python script'
+COMMIT_MESSAGE = 'cmmt from py'
 
 def git_push():
     try:
