@@ -1,13 +1,13 @@
 
 # importing the required module
 import matplotlib.pyplot as plt
-figure, axis = plt.subplots(3,1)
+figure, axis = plt.subplots(3,1,figsize=(10,10))
 # x axis values
 x = [1,2,3,4]
 # corresponding y axis values
-y = [2,4,1,4]
-y1= [2,5,8,6]
-y2 =[5,3,6,9]
+y = [20,40,10,4]
+y1= [20,50,80,6]
+y2 =[50,30,60,9]
 
 axis[0].plot(x, y, color = 'r', marker='o', markerfacecolor='black', markersize=5)
 axis[0].set_title("Temperature Data")
