@@ -24,7 +24,7 @@ figure.tight_layout()
 plt.savefig('chart.png')
 # plt.show()
 
-PATH_OF_GIT_REPO = '.'  # make sure .git folder is properly configured
+PATH_OF_GIT_REPO = ''  # make sure .git folder is properly configured
 COMMIT_MESSAGE = 'comment from python script'
 
 def git_push():
@@ -34,7 +34,7 @@ def git_push():
         repo.index.commit(COMMIT_MESSAGE)
         origin = repo.remote(name='origin')
         origin.push()
-    except:
-        print("error")    
+    except Exception as e:
+        print(e)    
 
 git_push()
